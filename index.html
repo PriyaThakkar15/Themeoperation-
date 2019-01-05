@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="h-100">
+<!-- Start your project here-->
+<div id="theme" class="background h-100 w-100 ">
+    <div class="container h-100">
+        <div class="row  align-items-center justify-content-center h-100">
+            <div class="col-6 py-5 mx-2 h-auto text-center bgtext">
+                <h2 id="previewtext"> WELCOME </h2>
+
+                <h6 class="font-weight-bold">Font size:<span class="label label-default ">
+                    <button onclick="plus()" type="button" class="btn btn-default my-2 mx-2"> + </button>
+                    <!--<button onclick="count()" type="button" class="btn btn-default my-2 mx-2"> 0 </button>-->
+                    <button onclick="minus()" type="button" class="btn btn-default my-2 my-2"> - </button>
+                </span></h6>
+
+                <h6 class="font-weight-bold">Title color:<span class="label label-default ">
+                    <button onclick="red()" type="button" class="btn btn-danger">RED</button>
+                    <button onclick="blue()" type="button" class="btn btn-primary">BLUE</button>
+                    <button onclick="green()" type="button" class="btn btn-success">GREEN</button>
+                </span></h6>
+
+                <h6 class="font-weight-bold">Back color:<span class="label label-default">
+                    <button onclick="bgred()" type="button" class="btn btn-danger">RED</button>
+                    <button onclick="bgblue()" type="button" class="btn btn-primary">BLUE</button>
+                    <button onclick="bggreen()" type="button" class="btn btn-success">GREEN</button>
+                </span></h6>
+                <h6 class="font-weight-bold">Theme:<span class="label label-default ">
+                     <button onclick="lighttheme()" type="button" class="btn btn-light my-2">Light</button>
+                     <button onclick="darktheme()" type="button" class="btn btn-dark my-2">Dark</button>
+                </span></h6>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function red() {
+        document.getElementById("previewtext").style.color = "#ff0000";
+    }
+
+    function blue() {
+        document.getElementById("previewtext").style.color = "#3225d1";
+    }
+
+    function green() {
+        document.getElementById("previewtext").style.color = "#0e700a";
+    }
+
+    function bgred() {
+        document.getElementById("previewtext").style.backgroundColor = "#ff0000";
+    }
+
+    function bgblue() {
+        document.getElementById("previewtext").style.backgroundColor = "#3225d1";
+    }
+
+    function bggreen() {
+        document.getElementById("previewtext").style.backgroundColor = "#0e700a";
+    }
+
+    var previewText = document.getElementById("previewtext");
+    var defaultFontSize = 32;
+    previewText.setAttribute("data-size", "32");
+
+    function plus() {
+        var size = previewText.getAttribute("data-size");
+        console.log(size);
+        previewText.style.fontSize = (size++) + "px";
+        previewText.setAttribute("data-size", size);
+    }
+    function count() {
+
+    }
+    function minus() {
+
+        var size = previewText.getAttribute("data-size");
+        console.log(size);
+        previewText.style.fontSize = (size--) + "px";
+        previewText.setAttribute("data-size", size);
+    }
+    function darktheme() {
+        document.getElementById("theme").style.color = "white";
+        document.getElementById("theme").style.backgroundColor = "black";
+    }
+    function lighttheme() {
+        document.getElementById("theme").style.color = "black";
+        document.getElementById("theme").style.backgroundColor = "white";
+
+    }
+
+</script>
+
+</body>
+
+</html>
